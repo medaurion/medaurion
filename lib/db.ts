@@ -26,6 +26,10 @@ export function ensurePilotTable(sql: NonNullable<ReturnType<typeof getSql>>) {
       consent_text TEXT NOT NULL,
       page        TEXT,
       status      TEXT NOT NULL DEFAULT 'new'
-    )`;
+    )`.then(async () => {
+    // One request per email and per mobile. Wrapped so old duplicate rows never break inserts.
+    try { await sql`CREATE UNIQUE INDEX IF NOT EXISTS pilot_requests_email_uq ON pilot_requests (lower(email))`; } catch (e) { console.warn("email index", e); }
+    try { await sql`CREATE UNIQUE INDEX IF NOT EXISTS pilot_requests_phone_uq ON pilot_requests (phone) WHERE phone IS NOT NULL`; } catch (e) { console.warn("phone index", e); }
+  });
   return ready;
 }

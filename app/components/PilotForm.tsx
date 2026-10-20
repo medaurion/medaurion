@@ -6,7 +6,20 @@ import { Icon } from "./Icon";
 const CONSENT =
   "I agree that medaurion may store these details and contact me about the doctor pilot. I can ask for them to be deleted at any time.";
 
-type State = { kind: "idle" | "sending" | "ok" | "error"; text?: string };
+type State = { kind: "idle" | "sending" | "ok" | "error" | "dup"; text?: string };
+
+const EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+
+/** Quick checks in the browser; the server repeats them (plus domain and duplicate checks). */
+function quickCheck(f: FormData): string | null {
+  const email = String(f.get("email") || "").trim();
+  const phone = String(f.get("phone") || "").replace(/\D/g, "").replace(/^(91|0)(?=\d{10}$)/, "");
+  if (!EMAIL_RE.test(email)) return "Please enter a valid email address.";
+  if (/@(example|test|sample)\./i.test(email)) return "Please use your real email — sample emails are not accepted.";
+  if (phone && !/^[6-9]\d{9}$/.test(phone)) return "Please enter a valid 10-digit Indian mobile number, or leave it blank.";
+  if (!f.get("specialty")) return "Please select your specialty.";
+  return null;
+}
 
 export default function PilotForm() {
   const [state, setState] = useState<State>({ kind: "idle" });
@@ -15,6 +28,11 @@ export default function PilotForm() {
     event.preventDefault();
     const form = event.currentTarget;
     const f = new FormData(form);
+    const local = quickCheck(f);
+    if (local) {
+      setState({ kind: "error", text: local });
+      return;
+    }
     setState({ kind: "sending" });
     try {
       const res = await fetch("/api/pilot", {
@@ -35,6 +53,8 @@ export default function PilotForm() {
       if (res.ok && data.ok) {
         form.reset();
         setState({ kind: "ok", text: "Thank you! We have your details and will contact you within 2 working days." });
+      } else if (res.status === 409) {
+        setState({ kind: "dup", text: data.error });
       } else {
         setState({ kind: "error", text: data.error || "Something went wrong. Please try again." });
       }
@@ -73,7 +93,7 @@ export default function PilotForm() {
         </label>
         <label>
           Specialty
-          <select name="specialty" defaultValue="">
+          <select name="specialty" defaultValue="" required>
             <option value="" disabled>Select</option>
             <option>Diabetology</option>
             <option>Cardiology</option>
@@ -90,14 +110,14 @@ export default function PilotForm() {
         <input name="consent" type="checkbox" required />
         <span>{CONSENT}</span>
       </label>
-      <button className="button button--primary pilot-form__submit" type="submit" disabled={state.kind === "sending"}>
+      <button className="button button--primary pilot-form__submit" type="submit" disabled={state.kind === "sending" || state.kind === "ok"}>
         {state.kind === "sending" ? "Sending…" : <>Request a conversation <Icon name="arrow" size={17} /></>}
       </button>
       <p className="pilot-form__disclaimer">
         Do not enter any patient information here. See our <a href="/privacy">privacy policy</a>.
       </p>
       {state.text ? (
-        <p className={`pilot-form__message${state.kind === "ok" ? " pilot-form__message--ok" : ""}`} role="status">{state.text}</p>
+        <p className={`pilot-form__message${state.kind === "ok" || state.kind === "dup" ? " pilot-form__message--ok" : ""}`} role="status">{state.text}</p>
       ) : null}
     </form>
   );
