@@ -273,7 +273,7 @@ function PilotSection() {
           <h2>A calmer clinic day starts with one conversation.</h2>
           <p>
             See how medaurion could fit alongside your existing clinic
-            workflow. This preview does not collect or send your information.
+            workflow. Share a few details and our team will contact you.
           </p>
         </div>
         <PilotForm />
