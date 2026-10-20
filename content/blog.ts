@@ -1,8 +1,9 @@
 import type { ContentPage } from "./types";
+import { posts2 } from "./blog2";
 
 const U = "2026-10-20";
 
-export const posts: ContentPage[] = [
+const posts1: ContentPage[] = [
   {
     slug: "prepare-follow-up-visit-in-60-seconds",
     seoTitle: "How to Prepare for a Follow-Up Visit in 60 Seconds",
@@ -324,5 +325,7 @@ export const posts: ContentPage[] = [
     ],
   },
 ];
+
+export const posts: ContentPage[] = [...posts1, ...posts2];
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
