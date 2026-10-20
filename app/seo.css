@@ -85,3 +85,12 @@
   .seo-hub, .seo-plans { grid-template-columns: minmax(0, 1fr); }
   .seo-cta { padding: 22px 20px; }
 }
+
+/* ===== Pilot form (database-connected) ===== */
+.pilot-form select { width: 100%; min-height: 42px; padding: 0 10px; border: 1px solid #dfe6ee; border-radius: 10px; background: #fcfdff; color: var(--ink); font-size: 11px; }
+.pilot-form__consent { display: flex !important; align-items: flex-start; gap: 9px !important; font-weight: 600 !important; line-height: 1.5; }
+.pilot-form__consent input { width: 16px; min-height: 16px; height: 16px; margin-top: 1px; flex: none; accent-color: var(--teal); }
+.pilot-form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.pilot-form__message--ok { border-color: #bfe3cf; background: #effaf3; color: #1d6b43; }
+.pilot-form__disclaimer a { color: var(--teal); text-decoration: underline; }
+.pilot-form__submit:disabled { opacity: 0.7; cursor: wait; }
