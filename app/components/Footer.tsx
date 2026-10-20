@@ -1,11 +1,20 @@
+import Link from "next/link";
 import { BrandLogo } from "./Brand";
 import { Icon } from "./Icon";
 
 const links = [
-  { label: "Product", href: "#how-it-works" },
-  { label: "For doctors", href: "#for-doctors" },
-  { label: "For clinic teams", href: "#for-clinics" },
-  { label: "Trust & safety", href: "#trust" },
+  { label: "Features", href: "/features" },
+  { label: "Specialties", href: "/specialties" },
+  { label: "Compare", href: "/compare" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Blog", href: "/blog" },
+  { label: "About us", href: "/about" },
+  { label: "Trust & safety", href: "/#trust" },
+];
+
+const legal = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
 ];
 
 export default function Footer() {
@@ -14,18 +23,18 @@ export default function Footer() {
       <div className="container">
         <div className="footer-main">
           <div className="footer-brand">
-            <a className="brand brand--footer" href="#top" aria-label="medaurion home">
+            <Link className="brand brand--footer" href="/" aria-label="medaurion home">
               <BrandLogo width={170} />
-            </a>
+            </Link>
             <p>Know what changed before the patient sits down.</p>
             <span className="footer-product">medaurion AIOS · Patient intelligence</span>
           </div>
           <nav className="footer-nav" aria-label="Footer">
             <h2>Explore</h2>
             {links.map((link) => (
-              <a href={link.href} key={link.label}>
+              <Link href={link.href} key={link.label}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="footer-promise">
@@ -36,17 +45,17 @@ export default function Footer() {
           <div className="footer-cta">
             <h2>For your clinic</h2>
             <p>Want to explore the doctor pilot?</p>
-            <a className="footer-button" href="#pilot">
+            <Link className="footer-button" href="/#pilot">
               Start a conversation <Icon name="arrow" size={16} />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="footer-bottom">
           <span>© 2026 medaurion. All rights reserved.</span>
-          <span>Built for better-informed care.</span>
-          <a href="#top" className="back-to-top">
+          <span className="footer-legal">{legal.map((l) => (<Link key={l.href} href={l.href}>{l.label}</Link>))}</span>
+          <Link href="#top" className="back-to-top">
             Back to top <Icon name="arrow-up" size={15} />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

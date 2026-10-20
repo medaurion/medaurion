@@ -1,16 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { BrandLogo } from "./Brand";
 import { Icon } from "./Icon";
 
 const productLinks = [
-  { label: "Patient 360°", icon: "brief" as const, href: "#patient-brief" },
-  { label: "What Changed", icon: "trend" as const, href: "#how-it-works" },
-  { label: "Follow-Ups", icon: "calendar" as const, href: "#how-it-works" },
-  { label: "Upload Report", icon: "upload" as const, href: "#for-clinics" },
-  { label: "Prescription", icon: "prescription" as const, href: "#for-doctors" },
-  { label: "More", icon: "sparkle" as const, href: "#product-demo" },
+  { label: "Patient Brief", icon: "brief" as const, href: "/features/patient-brief" },
+  { label: "What Changed", icon: "trend" as const, href: "/features/what-changed" },
+  { label: "Follow-Ups", icon: "calendar" as const, href: "/features/follow-up-intelligence" },
+  { label: "AI Notes", icon: "prescription" as const, href: "/features/ai-clinical-documentation" },
+  { label: "Specialties", icon: "users" as const, href: "/specialties" },
+  { label: "Pricing", icon: "sparkle" as const, href: "/pricing" },
 ];
 
 export default function Header() {
@@ -19,16 +20,16 @@ export default function Header() {
   return (
     <header className="site-header" id="top">
       <div className="header-main container">
-        <a className="brand" href="#top" aria-label="medaurion home">
+        <Link className="brand" href="/" aria-label="medaurion home">
           <BrandLogo priority />
-        </a>
+        </Link>
         <div className="header-actions">
-          <a className="header-about" href="#about">
+          <Link className="header-about" href="/about">
             About Us
-          </a>
-          <a className="header-login" href="#pilot" title="Ask about clinic access">
+          </Link>
+          <Link className="header-login" href="/#pilot" title="Ask about clinic access">
             Login
-          </a>
+          </Link>
         </div>
         <button
           aria-expanded={menuOpen}
@@ -46,7 +47,7 @@ export default function Header() {
       >
         <div className="product-nav__inner container">
           {productLinks.map((link) => (
-            <a
+            <Link
               className="product-nav__link"
               href={link.href}
               key={link.label}
@@ -56,7 +57,7 @@ export default function Header() {
                 <Icon name={link.icon} size={21} />
               </span>
               <span>{link.label}</span>
-            </a>
+            </Link>
           ))}
         </div>
       </nav>

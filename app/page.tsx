@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import FeatureCards from "./components/FeatureCards";
@@ -10,6 +11,8 @@ import ConditionsGrid from "./components/ConditionsGrid";
 import ProductTour from "./components/ProductTour";
 import PilotForm from "./components/PilotForm";
 import StatsBanner from "./components/StatsBanner";
+import JsonLd from "./components/seo/JsonLd";
+import { softwareSchema } from "./components/seo/schema";
 
 const teamFeatures = [
   {
@@ -71,9 +74,9 @@ function FeatureFilm() {
             medaurion brings the important details together, so you can focus
             on the patient in front of you.
           </p>
-          <a className="button button--light" href="#pilot">
+          <Link className="button button--light" href="#pilot">
             See medaurion in your clinic <Icon name="arrow" size={17} />
-          </a>
+          </Link>
           <p className="film-note">A product preview using fictional demo data.</p>
         </div>
         <ProductTour />
@@ -122,9 +125,9 @@ function ClinicFeatures() {
             Reports in, reminders prepared, and nobody lost after the visit.
             Give your team a calmer way to keep care moving.
           </p>
-          <a className="text-link" href="#pilot">
+          <Link className="text-link" href="#pilot">
             Bring your team along <Icon name="arrow" size={17} />
-          </a>
+          </Link>
           <div className="clinic-illustration" aria-hidden="true">
             <div className="clinic-orbit clinic-orbit--one" />
             <div className="clinic-orbit clinic-orbit--two" />
@@ -206,7 +209,7 @@ function PromoCards() {
     <section className="section promo-section">
       <div className="container">
         <div className="promo-grid">
-          <a className="promo-card promo-card--follow" href="#how-it-works">
+          <Link className="promo-card promo-card--follow" href="/features/follow-up-intelligence">
             <span className="promo-card__icon">
               <Icon name="calendar" size={24} />
             </span>
@@ -219,8 +222,8 @@ function PromoCards() {
             <span className="promo-art promo-art--calendar" aria-hidden="true">
               <Icon name="calendar" size={108} />
             </span>
-          </a>
-          <a className="promo-card promo-card--brief" href="#patient-brief">
+          </Link>
+          <Link className="promo-card promo-card--brief" href="/features/patient-brief">
             <span className="promo-card__icon">
               <Icon name="brief" size={24} />
             </span>
@@ -233,7 +236,7 @@ function PromoCards() {
             <span className="promo-art promo-art--brief" aria-hidden="true">
               <Icon name="file" size={104} />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -282,9 +285,9 @@ function PilotSection() {
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#main-content">
+      <Link className="skip-link" href="#main-content">
         Skip to content
-      </a>
+      </Link>
       <Header />
       <main id="main-content">
         <Hero />
@@ -302,6 +305,7 @@ export default function Home() {
         <PilotSection />
       </main>
       <Footer />
+      <JsonLd data={softwareSchema} />
     </>
   );
 }
