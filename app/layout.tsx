@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import "./seo.css";
 import { SITE } from "@/lib/site";
@@ -16,6 +17,21 @@ export const metadata: Metadata = {
     "Know what changed before the patient sits down. A 60-second patient brief, lab result comparison, follow-up tracking and doctor-approved AI notes for Indian clinics.",
   applicationName: SITE.product,
   alternates: { canonical: "/" },
+
+  // Updated Icons Configuration:
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+
   openGraph: {
     type: "website",
     url: "/",
@@ -42,6 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en-IN">
       <body>
         {children}
+        <Analytics />
         <JsonLd data={[organizationSchema, websiteSchema]} />
       </body>
     </html>
