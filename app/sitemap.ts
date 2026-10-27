@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: u("/compare"), lastModified: d, changeFrequency: "monthly", priority: 0.7 },
     { url: u("/blog"), lastModified: d, changeFrequency: "weekly", priority: 0.7 },
     { url: u("/pricing"), lastModified: d, changeFrequency: "monthly", priority: 0.8 },
+    { url: u("/chronic-care-software"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.9 },
     { url: u("/about"), lastModified: d, changeFrequency: "yearly", priority: 0.5 },
   ];
   const group = (base: string, items: { slug: string; updated: string }[], priority: number) =>
