@@ -137,7 +137,7 @@ const sections: HubSection[] = [
           "**Switch fully.** After two weeks, use medaurion for all new visits and keep the old files for look-up only.",
         ],
       },
-      { t: "p", text: "Founding Doctor clinics in Pune and Nashik get help from our team with the import and setup." },
+      { t: "p", text: "Founding Doctor clinics anywhere in India get online help from our team with the import and setup." },
     ],
   },
   {

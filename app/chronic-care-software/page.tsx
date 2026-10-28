@@ -44,7 +44,7 @@ const faqs: Faq[] = [
   { q: "Can patients send reports on WhatsApp?", a: "Yes. With the patient's consent, reports sent to the clinic's WhatsApp are filed into that patient's record and appear in the next brief." },
   { q: "Is medaurion linked with ABDM and ABHA?", a: "Not yet. ABHA linking is planned. medaurion uses ABHA, never Aadhaar, for health record linking." },
   { q: "Which languages does it support for patients?", a: "Prescriptions and medicine schedule cards can be shared in English, Marathi and Hindi." },
-  { q: "How long does setup take?", a: "A single-doctor clinic can start the same day. For Founding Doctor clinics in Pune and Nashik, our team sets it up and imports existing patient lists." },
+  { q: "How long does setup take?", a: "A single-doctor clinic can start the same day. For Founding Doctor clinics anywhere in India, our team sets it up online and imports existing patient lists." },
   { q: "Does it work on a phone?", a: "Yes. medaurion runs in the browser on a laptop, tablet or phone. Many doctors read the Morning OPD Briefing on their phone before the OPD starts." },
   { q: "Can my front desk staff use it?", a: "Yes. Front desk staff get their own login with limited access. They can manage the queue, upload reports and send reminders, but they can't see clinical notes unless the doctor allows it." },
   { q: "Do WhatsApp messages cost extra?", a: "WhatsApp Business messages have a per-message cost set by Meta. medaurion shows the expected cost for your clinic before you switch reminders on." },
@@ -258,7 +258,7 @@ export default function ChronicCareSoftwarePage() {
               <li><b>Diabetologists and endocrinologists</b> who track HbA1c, insulin changes and complication screening dates.</li>
               <li><b>Cardiologists</b> who follow BP, lipids and post-procedure medicines over months.</li>
               <li><b>Nephrologists</b> who watch creatinine, eGFR and ACR and coordinate with referring doctors.</li>
-              <li><b>Small multi-doctor clinics</b> in cities like Pune and Nashik that want one shared view of their chronic patients.</li>
+              <li><b>Small multi-doctor clinics</b> across India that want one shared view of their chronic patients.</li>
             </ul>
             <p>It is not a hospital management system. If you need IPD billing, pharmacy stock and bed management, use a hospital system and connect medaurion for the chronic OPD side when integration is available. Browse by <Link href="/specialties">specialty</Link>.</p>
           </div>
@@ -371,7 +371,7 @@ export default function ChronicCareSoftwarePage() {
               </div>
             </div>
             <div className="cc-callout cc-read" style={{ marginTop: 20 }}>
-              <p><b>Founding Doctor programme, Pune and Nashik:</b> 10 seats, a 12-week free pilot, price locked for 12–24 months, and we set it up for you. You keep your data if you leave.</p>
+              <p><b>Founding Doctor programme – 10 seats across India:</b> a 12-week free pilot, price locked for 12–24 months, and we set it up for you online. You keep your data if you leave.</p>
             </div>
           </div>
         </section>

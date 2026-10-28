@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/meta";
 const PATH = "/pricing";
 const TITLE = "Pricing for Doctors and Clinics | medaurion";
 const DESCRIPTION =
-  "medaurion pricing: a free plan for doctors, Doctor and Clinic plans in early access, and a 12-week free Founding Doctor pilot in Pune and Nashik.";
+  "medaurion pricing: a free plan for doctors, Doctor and Clinic plans in early access, and a 12-week free Founding Doctor pilot for 10 clinics across India.";
 
 export const metadata = pageMeta({
   title: TITLE,
@@ -57,7 +57,7 @@ const sections: HubSection[] = [
   },
   {
     id: "founding-doctor",
-    h2: "Founding Doctor programme – Pune and Nashik",
+    h2: "Founding Doctor programme – 10 seats across India",
     blocks: [
       { t: "callout", text: "**10 seats · 12-week free pilot · price locked for 12–24 months · we set it up for you · you keep your data if you leave.**" },
       { t: "p", text: "Founding Doctors use the full product with their own patients for 12 weeks at no cost. Our team imports your patient list, sets up templates and WhatsApp, and measures results with you using your own before-and-after numbers, such as second-visit returns and time spent per follow-up visit." },
@@ -81,7 +81,7 @@ const faqs: Faq[] = [
   { q: "Do WhatsApp messages cost extra?", a: "WhatsApp Business messages have a per-message cost set by Meta. We show the expected cost for your clinic before you switch reminders on." },
   { q: "Do I need to replace my current software?", a: "No. medaurion is designed to work alongside the software you already use." },
   { q: "Can I export my data if I leave?", a: "Yes. You can export your records at any time, on any plan." },
-  { q: "Who can join the Founding Doctor programme?", a: "Doctors with an OPD in Pune or Nashik. There are 10 seats. Book a 15-minute call to apply." },
+  { q: "Who can join the Founding Doctor programme?", a: "Doctors with an OPD anywhere in India. There are 10 seats. Book a 15-minute call to apply; demo and setup happen online." },
 ];
 
 export default function Page() {
@@ -93,7 +93,7 @@ export default function Page() {
       updatedLabel="27 Oct 2026"
       eyebrow="Pricing"
       h1="medaurion pricing for doctors and clinics"
-      lead="Start free, with Patient 360° for 10 patients a month and no card needed. The Doctor and Clinic plans are in early access, with prices shown as estimates until the doctor pilot ends. Founding Doctors in Pune and Nashik get a 12-week free pilot and a locked price."
+      lead="Start free, with Patient 360° for 10 patients a month and no card needed. The Doctor and Clinic plans are in early access, with prices shown as estimates until the doctor pilot ends. Founding Doctors anywhere in India get a 12-week free pilot and a locked price."
       secondaryCta={{ label: "See what's included", href: "#compare-plans" }}
       sections={sections}
       faqs={faqs}

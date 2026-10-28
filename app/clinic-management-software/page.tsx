@@ -144,7 +144,7 @@ const sections: HubSection[] = [
         "**Evening OPD:** run the queue in medaurion and write prescriptions there.",
         "**Next day:** check the Follow-Ups board and send the first reminders.",
       ] },
-      { t: "p", text: "Founding Doctor clinics in Pune and Nashik get setup done by our team: 10 seats, a 12-week free pilot, and a price lock for 12–24 months." },
+      { t: "p", text: "Founding Doctor clinics anywhere in India get setup done online by our team: 10 seats, a 12-week free pilot, and a price lock for 12–24 months." },
     ],
   },
   {
@@ -163,7 +163,7 @@ const faqs: Faq[] = [
   { q: "Does it include a booking link?", a: "A free appointment booking link for your clinic is launching soon." },
   { q: "Does medaurion do GST billing and inventory?", a: "No. medaurion focuses on the OPD: queue, records, prescriptions and follow-ups, with a monthly summary for your CA. Keep your accounting or billing software for GST invoices and stock." },
   { q: "Can front desk staff see clinical notes?", a: "Only if the doctor allows it. Each role has its own access, and every action is logged." },
-  { q: "How long does setup take?", a: "Most small clinics can start the same day. Founding Doctor clinics in Pune and Nashik get setup done by our team." },
+  { q: "How long does setup take?", a: "Most small clinics can start the same day. Founding Doctor clinics anywhere in India get setup done online by our team." },
   { q: "Does it work on a phone?", a: "Yes. It runs in the browser on a phone, tablet or laptop." },
   { q: "Can I export my clinic's data?", a: "Yes. You can export your records at any time, including if you stop using medaurion." },
 ];
