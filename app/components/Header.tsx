@@ -7,9 +7,7 @@ import { Icon } from "./Icon";
 
 const productLinks = [
   { label: "Chronic Care", icon: "heart" as const, href: "/chronic-care-software" },
-  { label: "EMR", icon: "file" as const, href: "/emr-software" },
   { label: "Patient Brief", icon: "brief" as const, href: "/features/patient-brief" },
-  { label: "What Changed", icon: "trend" as const, href: "/features/what-changed" },
   { label: "Follow-Ups", icon: "calendar" as const, href: "/features/follow-up-intelligence" },
   { label: "AI Notes", icon: "prescription" as const, href: "/features/ai-clinical-documentation" },
   { label: "Specialties", icon: "users" as const, href: "/specialties" },
