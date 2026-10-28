@@ -2902,7 +2902,7 @@ a:hover .card-link svg {
 
 .footer-main {
   display: grid;
-  grid-template-columns: 1.35fr 0.72fr 1fr 0.85fr;
+  grid-template-columns: 1.2fr 0.72fr 1fr 1fr 0.85fr;
   gap: 34px;
   padding-bottom: 44px;
 }

@@ -12,6 +12,16 @@ const links = [
   { label: "Trust & safety", href: "/#trust" },
 ];
 
+const solutions = [
+  { label: "Chronic care software", href: "/chronic-care-software" },
+  { label: "EMR software", href: "/emr-software" },
+  { label: "Clinic management software", href: "/clinic-management-software" },
+  { label: "AI for doctors", href: "/ai-for-doctors" },
+  { label: "Digital prescription", href: "/digital-prescription" },
+  { label: "HealthPlix alternatives", href: "/compare/healthplix-alternatives" },
+  { label: "Eka Care alternatives", href: "/compare/eka-care-alternatives" },
+];
+
 const legal = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
@@ -33,6 +43,14 @@ export default function Footer() {
             <h2>Explore</h2>
             {links.map((link) => (
               <Link href={link.href} key={link.label}>
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <nav className="footer-nav" aria-label="Solutions">
+            <h2>Solutions</h2>
+            {solutions.map((link) => (
+              <Link href={link.href} key={link.href}>
                 {link.label}
               </Link>
             ))}
