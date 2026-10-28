@@ -16,6 +16,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: u("/blog"), lastModified: d, changeFrequency: "weekly", priority: 0.7 },
     { url: u("/pricing"), lastModified: d, changeFrequency: "monthly", priority: 0.8 },
     { url: u("/chronic-care-software"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.9 },
+    { url: u("/emr-software"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.9 },
+    { url: u("/clinic-management-software"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.9 },
+    { url: u("/ai-for-doctors"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.9 },
+    { url: u("/digital-prescription"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.9 },
+    { url: u("/compare/healthplix-alternatives"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.7 },
+    { url: u("/compare/eka-care-alternatives"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.7 },
+    { url: u("/compare/mocdoc-alternatives"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.7 },
+    { url: u("/compare/drlogy-alternatives"), lastModified: new Date("2026-10-27"), changeFrequency: "monthly", priority: 0.7 },
     { url: u("/about"), lastModified: d, changeFrequency: "yearly", priority: 0.5 },
   ];
   const group = (base: string, items: { slug: string; updated: string }[], priority: number) =>
