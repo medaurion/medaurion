@@ -36,7 +36,7 @@ const CARDS: { g: string; tag: "LIVE" | "PLANNED"; ui: string; rows: Row[]; tilt
   { g: "g3", tag: "LIVE", ui: "Report inbox", rows: [{ k: "CBC.pdf → S. Kulkarni", v: "filed", c: "good" }, { k: "Lipid.jpg → A. Patil", v: "filed", c: "good" }], tilt: true, title: "WhatsApp Report Inbox", text: "Reports patients send land in the right record." },
   { g: "g2", tag: "PLANNED", ui: "ABHA link", rows: [{ k: "Consent", v: "requested" }, { k: "Records shared", v: "with consent" }], title: "ABHA Linking", text: "Consent-based record sharing through India's health ID." },
 ];
-const ROW_COLOR = { warm: "#E8743B", good: "#2E7D57", pri: "#0F6A8E" } as const;
+const ROW_COLOR = { warm: "#E8743B", good: "#2E7D57", pri: "#0B63CE" } as const;
 
 const JOURNEY = [
   { pos: "up", cls: "", chip: "Start", t: "The problem", d: "Seen from inside healthcare", stem: true },
@@ -163,7 +163,7 @@ export default function Page() {
                     </div>
                     <div className="spark">
                       <svg viewBox="0 0 200 40" preserveAspectRatio="none" style={{ width: "100%", height: "100%" }} aria-hidden="true">
-                        <polyline fill="none" stroke="#0F6A8E" strokeWidth="2" points="0,30 40,27 80,29 120,22 160,18 200,8" />
+                        <polyline fill="none" stroke="#0B63CE" strokeWidth="2" points="0,30 40,27 80,29 120,22 160,18 200,8" />
                       </svg>
                     </div>
                   </div>

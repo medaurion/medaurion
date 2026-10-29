@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   category: "health",
 };
 
-export const viewport: Viewport = { themeColor: "#0F6A8E", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#0B63CE", width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

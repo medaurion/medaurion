@@ -134,9 +134,9 @@ export default function ChronicCareSoftwarePage() {
                 <svg viewBox="0 0 300 84" role="img" aria-label="HbA1c trend from 7.6 in January to 7.2 in April and 8.4 in October">
                   <line x1="0" y1="62" x2="300" y2="62" stroke="#DCE4E8" strokeDasharray="3 3" />
                   <text x="2" y="58" fontSize="10" fill="#55666F">7.0 target</text>
-                  <path d="M10 50 L120 66 L290 20" fill="none" stroke="#0F6A8E" strokeWidth="2.5" />
-                  <circle cx="10" cy="50" r="4" fill="#0F6A8E" />
-                  <circle cx="120" cy="66" r="4" fill="#0F6A8E" />
+                  <path d="M10 50 L120 66 L290 20" fill="none" stroke="#0B63CE" strokeWidth="2.5" />
+                  <circle cx="10" cy="50" r="4" fill="#0B63CE" />
+                  <circle cx="120" cy="66" r="4" fill="#0B63CE" />
                   <circle cx="290" cy="20" r="5" fill="#B42318" />
                   <text x="18" y="44" fontSize="11" fill="#55666F">7.6</text>
                   <text x="128" y="78" fontSize="11" fill="#55666F">7.2</text>
