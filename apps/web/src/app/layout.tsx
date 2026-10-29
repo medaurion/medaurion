@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   description:
     "Know what changed before the patient sits down. A 60-second patient brief, lab result comparison, follow-up tracking and doctor-approved AI notes for Indian clinics.",
   applicationName: SITE.product,
+  manifest: "/site.webmanifest",
   alternates: { canonical: "/" },
 
   // Updated Icons Configuration:

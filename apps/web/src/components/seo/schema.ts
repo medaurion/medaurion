@@ -7,7 +7,7 @@ export const organizationSchema = {
   "@id": `${SITE.url}/#organization`,
   name: SITE.name,
   url: SITE.url,
-  logo: absoluteUrl("/medaurion-logo.svg"),
+  logo: absoluteUrl("/medaurion-logo-square.png"),
   description: SITE.description,
   areaServed: "IN",
 };

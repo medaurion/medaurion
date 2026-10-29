@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <Link className="brand brand--footer" href="/" aria-label="medaurion home">
-              <BrandLogo width={170} />
+              <BrandLogo onDark width={162} />
             </Link>
             <p>Know what changed before the patient sits down.</p>
             <span className="footer-product">medaurion AIOS · Patient intelligence</span>
