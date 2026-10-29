@@ -185,27 +185,32 @@ Reference ranges vary by lab, age and sex. Always show the range used and let th
 | Tests | Vitest (unit), Playwright (end-to-end) |
 | Quality | ESLint + Prettier, CI must pass before merge |
 
-Suggested structure:
+Repository structure (monorepo, npm workspaces):
 
 ```
-src/
-  app/
-    (marketing)/        website: home, about, join (pilot form), privacy, terms, grievance
-    (app)/              signed-in app: today, patients, patients/[id], followups, docs, copilot, practice, trust, settings
-    card/[token]/       patient Health Card page (release 2)
-    api/                route handlers
-  components/           ui primitives + feature components
-  lib/
-    ai/                 the only place that talks to the AI provider
-    compare/            What Changed logic (pure functions, fully unit-tested)
-    followup/           status + drop-off logic (pure, unit-tested)
-    audit/              audit logging helper used everywhere
-    db/                 schema, queries
-    i18n/
-  config/params.ts      lab parameters + reference ranges
-docs/reference/         prototypes, video, brand decisions
+apps/
+  web/                  www.medaurion.com — marketing website (live)
+    src/app/(marketing)/  about, blog, compare, features, pricing, specialties
+    src/app/(solutions)/  SEO hub pages (chronic-care-software, emr-software, …)
+    src/app/(legal)/      privacy, terms
+    src/app/api/          pilot form
+    src/components/       layout/, home/, seo/, ui/
+    src/content/  src/lib/
+  app/                  app.medaurion.com — doctor software (to be built; see apps/app/README.md)
+    src/app/(auth)/  (clinic)/today, patients, patients/[id], visit, rx, inbox, followups, clinic
+    src/app/card/[token]/   patient Health Card (release 2)
+    src/lib/ai/         the only place that talks to the AI provider
+    src/lib/compare/    What Changed logic (pure functions, fully unit-tested)
+    src/lib/followup/   status + drop-off logic (pure, unit-tested)
+    src/lib/audit/      audit logging helper used everywhere
+packages/
+  db/                   shared database code (schema, queries)
+  ui/                   shared logo, buttons, icons
+docs/                   architecture, prototypes, SEO notes (docs/reference/ for reference files)
 seed/                   fictional demo clinic (12 patients from prototype v1.1)
 ```
+
+Patient data is handled only in `apps/app`, never in `apps/web`. Route groups like `(marketing)` do not change URLs.
 
 ---
 
@@ -253,7 +258,7 @@ seed/                   fictional demo clinic (12 patients from prototype v1.1)
 ### Commands (keep this list current)
 
 ```bash
-npm install          # install dependencies
+npm install          # install dependencies (run in repo root)
 npm run dev          # start local app at http://localhost:3000
 npm run lint         # lint
 npm run test         # unit tests

@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# medaurion
 
-## Getting Started
+Monorepo for medaurion AIOS — patient intelligence for India's clinics.
 
-First, run the development server:
+| Folder | What it is | Live at |
+|---|---|---|
+| `apps/web` | Marketing website: home, about, solutions, compare, blog, pricing, pilot form | www.medaurion.com |
+| `apps/app` | **Main software** for doctors and clinics (not started yet) | app.medaurion.com (planned) |
+| `packages/db` | Shared database code (Neon Postgres) | — |
+| `packages/ui` | Shared logo, buttons, icons (empty for now) | — |
+| `docs` | Architecture, prototypes, SEO notes | — |
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Website folders (`apps/web/src`)
+
+```
+app/
+  (marketing)/   about, blog, compare, features, pricing, specialties
+  (solutions)/   chronic-care-software, emr-software, clinic-management-software, ai-for-doctors, digital-prescription
+  (legal)/       privacy, terms
+  api/           pilot form endpoint
+  layout.tsx, page.tsx (home), sitemap.ts, robots.ts, globals.css, seo.css
+components/
+  layout/  Header, Footer
+  home/    home-page sections
+  seo/     HubPage, PageShell, JsonLd, schema
+  ui/      Brand, Icon
+content/   page text and data (blog, compare, features, specialties)
+lib/       site settings, meta tags, email checks
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Folders in brackets like `(marketing)` are Next.js **route groups**: they organise files but do not appear in the URL. `/about` stays `/about`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands (run in the repo root)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install      # install everything once
+npm run dev      # website at http://localhost:3000
+npm run build    # production build of the website
+npm run lint
+```
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel project `medaurion` → Settings → Build and Deployment → **Root Directory = `apps/web`**.
