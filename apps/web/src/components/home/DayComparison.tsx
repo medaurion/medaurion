@@ -47,7 +47,9 @@ export default function DayComparison() {
         <div className="day-heading">
           <div>
             <p className="eyebrow">A DAY AT THE CLINIC</p>
-            <h2>Same clinic. A calmer day.</h2>
+            <h2>
+              Same clinic. <span className="h2-accent">A calmer day.</span>
+            </h2>
             <p>Switch to see how a normal OPD day can feel with a clearer view.</p>
           </div>
           <div aria-label="Compare clinic workflow" className="day-toggle" role="group">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Hero from "@/components/home/Hero";
 import FeatureCards from "@/components/home/FeatureCards";
+import { PromoScene } from "@/components/home/HomeIllustrations";
 import Footer from "@/components/layout/Footer";
 import { BrandMark } from "@/components/ui/Brand";
 import { Icon } from "@/components/ui/Icon";
@@ -175,7 +176,9 @@ function TrustSection() {
           </span>
           <div>
             <p className="eyebrow">BUILT AROUND TRUST</p>
-            <h2>AI assists. The doctor decides.</h2>
+            <h2>
+              AI assists. <span className="h2-accent">The doctor decides.</span>
+            </h2>
             <p>
               Nothing AI writes enters a patient record until a doctor approves
               it.
@@ -210,32 +213,24 @@ function PromoCards() {
       <div className="container">
         <div className="promo-grid">
           <Link className="promo-card promo-card--follow" href="/features/follow-up-intelligence">
-            <span className="promo-card__icon">
-              <Icon name="calendar" size={24} />
-            </span>
             <p className="eyebrow">FOLLOW-UP INTELLIGENCE</p>
             <h2>Follow-ups that never slip.</h2>
             <p>See who is due, who is overdue and what needs a staff call.</p>
             <span className="card-link">
-              See how it works <Icon name="arrow" size={16} />
+              See how it works <Icon name="chevron" size={16} />
             </span>
-            <span className="promo-art promo-art--calendar" aria-hidden="true">
-              <Icon name="calendar" size={108} />
-            </span>
+            <span aria-hidden="true" className="promo-card__blob" />
+            <PromoScene name="calendar" />
           </Link>
           <Link className="promo-card promo-card--brief" href="/features/patient-brief">
-            <span className="promo-card__icon">
-              <Icon name="brief" size={24} />
-            </span>
             <p className="eyebrow">PATIENT BRIEF</p>
             <h2>Know your patient before they sit down.</h2>
             <p>Bring the latest visits, results and pending actions together.</p>
             <span className="card-link">
-              See a brief <Icon name="arrow" size={16} />
+              See a brief <Icon name="chevron" size={16} />
             </span>
-            <span className="promo-art promo-art--brief" aria-hidden="true">
-              <Icon name="file" size={104} />
-            </span>
+            <span aria-hidden="true" className="promo-card__blob" />
+            <PromoScene name="brief" />
           </Link>
         </div>
       </div>

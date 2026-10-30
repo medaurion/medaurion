@@ -4812,3 +4812,78 @@ h1,h2,h3{font-family:var(--font-body)}
 .pilot-form__consent{font-size:13px;font-weight:400!important;line-height:1.5}
 @media (max-width:600px){.day-event__moment{font-size:14px}}
 @media (max-width:860px){.how-grid::before{display:none}.how-step+.how-step{border-top:1px dashed #c6e2ff;padding-top:24px}}
+
+/* ===== Home: tonal blue rhythm, illustrated cards, condition icons (MediBuddy method) ===== */
+.h2-accent{color:#004fb6}
+.film-section .h2-accent,.north-star .h2-accent{color:#8cc4ff}
+.hero-section{background:linear-gradient(180deg,#f1f7ff 0%,#fff 100%)}
+.how-section,.stats-section,.day-section,.clinic-section,.promo-section{background:#fff}
+.principles-strip{background:#e2f0ff;border-color:#c6e2ff}
+.conditions-section{background:#e2f0ff}
+.trust-section{background:#f5f7f8}
+.pilot-section{background:#f1f7ff}
+.trust-item{background:#fff;border-color:#e2edf8}
+.stat-card{background:#f1f7ff;border-color:#c6e2ff}
+
+/* For Doctors: white cards, pastel wave, line illustration */
+.doctor-section{background:linear-gradient(180deg,#f5f9ff 0%,#fff 100%)}
+.doctor-grid{gap:22px}
+.doctor-card{background:#fff;border:0;border-radius:26px;box-shadow:0 12px 34px rgba(18,42,84,.09);min-height:300px;padding:30px 26px 130px;position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.doctor-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(18,42,84,.13)}
+.doctor-card::before,.doctor-card::after{display:none}
+.doctor-card--blue{--acc:#0b63ce;--tint:#eaf3ff}
+.doctor-card--mint{--acc:#1f8a5b;--tint:#e8f6ee}
+.doctor-card--peach{--acc:#c2532e;--tint:#fff0e6}
+.doctor-card--lavender{--acc:#6650c8;--tint:#f0edfb}
+.doctor-card .feature-label{font-size:11.5px;letter-spacing:.12em;color:var(--acc);margin-bottom:10px}
+.doctor-card h3{font-size:22px;font-weight:600;color:#1b2430;padding-right:34px;margin:0 0 10px}
+.doctor-card p{color:#3e4b5c;font-size:15px;position:relative;z-index:2}
+.doctor-card .card-link{position:absolute;top:28px;right:24px;margin:0;color:#3b82f6}
+.doctor-card__wave{position:absolute;left:0;right:0;bottom:0;width:100%;height:78px;color:var(--tint);z-index:0}
+.doctor-card__art{position:absolute;right:14px;bottom:12px;width:132px;height:118px;z-index:1}
+
+/* Promo cards: mint + blue, soft shape, scene illustration */
+.promo-grid{gap:20px}
+.promo-card{min-height:330px;border-radius:28px;padding:40px 40px 96px;overflow:hidden;position:relative;border:0;box-shadow:none}
+.promo-card--follow{background:#eef6f2}
+.promo-card--brief{background:linear-gradient(135deg,#d7e8ff 0%,#e8f2ff 100%)}
+.promo-card .eyebrow{font-size:12px;letter-spacing:.12em;position:relative;z-index:2}
+.promo-card--follow .eyebrow{color:#1f8a5b}
+.promo-card--brief .eyebrow{color:#0b63ce}
+.promo-card h2{font-size:30px;font-weight:600;color:#1b2430;max-width:52%;position:relative;z-index:2;line-height:1.2}
+.promo-card>p:not(.eyebrow){font-size:17px;color:#3e4b5c;max-width:46%;position:relative;z-index:2}
+.promo-card .card-link{position:absolute;left:40px;bottom:38px;display:inline-flex;align-items:center;gap:4px;text-transform:uppercase;letter-spacing:.05em;font-weight:700;font-size:16px;z-index:2}
+.promo-card .card-link svg{transform:rotate(-90deg)}
+.promo-card--follow .card-link{color:#1b2430}
+.promo-card--brief .card-link{color:#0b63ce}
+.promo-card__blob{position:absolute;right:-40px;bottom:-60px;width:360px;height:300px;border-radius:48% 52% 0 0/62% 58% 0 0;transform:rotate(-14deg);z-index:0}
+.promo-card--follow .promo-card__blob{background:#d4ebde}
+.promo-card--brief .promo-card__blob{background:#b8d5fb}
+.promo-card__scene{position:absolute;right:24px;bottom:10px;width:250px;height:210px;z-index:1}
+
+/* Chronic-care tiles with colour icons */
+.condition-tile{padding:18px 10px 16px;gap:10px;border-radius:20px;background:#fff;border:1px solid #e3eaf3;box-shadow:0 6px 18px rgba(18,42,84,.05)}
+.condition-tile:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(18,42,84,.1)}
+.condition-tile__icon{width:76px;height:76px;border-radius:22px;padding:0;display:grid;place-items:center}
+.condition-tile.is-selected{border:2px solid #0b63ce;background:#f1f7ff;box-shadow:0 10px 26px rgba(11,99,206,.16)}
+.condition-tile.is-selected>span:last-child{color:#0b63ce;font-weight:600}
+.condition-tile--more{border-style:dashed}
+.condition-detail__icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center}
+
+@media (max-width:600px){
+  .doctor-card{min-height:0;padding:20px 16px 104px;border-radius:20px}
+  .doctor-card .feature-label{padding-right:24px;font-size:10.5px}
+  .doctor-card h3{font-size:18px;padding-right:0;overflow-wrap:anywhere}
+  .doctor-card p{font-size:14px}
+  .doctor-card .card-link{top:18px;right:14px}
+  .doctor-card__art{width:100px;height:90px;right:8px;bottom:8px}
+  .doctor-card__wave{height:56px}
+  .promo-card{padding:30px 24px 200px;min-height:0}
+  .promo-card h2{font-size:25px;max-width:100%}
+  .promo-card>p:not(.eyebrow){max-width:100%;font-size:16px}
+  .promo-card .card-link{position:relative;left:0;bottom:auto;margin-top:18px}
+  .promo-card__blob{width:280px;height:230px;right:-30px;bottom:-50px}
+  .promo-card__scene{width:200px;height:168px;right:12px}
+  .condition-tile__icon{width:64px;height:64px}
+  .condition-tile__icon .condition-art{width:52px;height:52px}
+}

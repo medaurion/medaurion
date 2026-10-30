@@ -29,7 +29,9 @@ export default function HowItWorks() {
           <span className="how-intro__mark"><Icon name="sparkle" size={22} /></span>
           <div>
             <p className="eyebrow">A SIMPLE WORKFLOW</p>
-            <h2>Three steps. No new habits.</h2>
+            <h2>
+              Three steps. <span className="h2-accent">No new habits.</span>
+            </h2>
             <p>Keep your current software. medaurion works alongside it.</p>
           </div>
         </div>
